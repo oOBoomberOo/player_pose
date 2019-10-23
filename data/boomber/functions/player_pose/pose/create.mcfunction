@@ -1,0 +1,2 @@
+summon armor_stand ~ ~ ~ {Tags: ['boomber.pose.pose', 'boomber.pose.spawning', 'global.ignore'], Invulnerable: 1b, Invisible: 0b, NoGravity: 1b, Marker: 1b, ShowArms: 1b, NoBasePlate: 1b, Silent: 1b}
+execute as @e[type=armor_stand, tag=boomber.pose.spawning] run function boomber:player_pose/pose/create/init

@@ -1,0 +1,1 @@
+tellraw @s [{"text": "Now posing [jojo/pose_3]...", "color": "green"}]

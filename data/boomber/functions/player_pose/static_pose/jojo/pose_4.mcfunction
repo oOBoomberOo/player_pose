@@ -1,0 +1,2 @@
+data merge entity @s {Pose: {RightArm: [-93.30753f, 49.18908f, 0.0f], LeftLeg: [0.0f, 0.0f, -5.0f], Head: [4.08942f, 51.18388f, 0.0f], LeftArm: [0.21605f, 33.01645f, 0.0f], RightLeg: [0.0f, 10.0f, 5.0f]}}
+scoreboard players set @s bb.pp.rot_offset -45000

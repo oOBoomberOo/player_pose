@@ -1,0 +1,56 @@
+{
+	"asserting_dominance": {
+		"t_pose": {
+			"type": "static_pose",
+			"pose": {
+				"LeftArm": [-90, -90, 0],
+				"RightArm": [-90, 90, 0]
+			}
+		},
+		"dab": {
+			"type": "static_pose",
+			"pose": {
+				"RightArm": [-105.93888, -42.50024, 0.0],
+				"LeftLeg": [17.27854, 68.7985, 0.0],
+				"Head": [23.86018, 37.73403, 0.0],
+				"LeftArm": [-125.45286, -64.35313, 0.0],
+				"RightLeg": [15.12864, -88.81156, 0.0]
+			}
+		}
+	},
+	"gesture": {
+		"wave": {
+			"type": "animate_pose",
+			"frame": 10,
+			"pose": [
+				{	"RightArm": [-130, 87, 0]	},
+				{	"RightArm": [-135, 87, 0]	},
+				{	"RightArm": [-140, 87, 0]	},
+				{	"RightArm": [-145, 87, 0]	},
+				{	"RightArm": [-150, 87, 0]	},
+				{	"RightArm": [-145, 87, 0]	},
+				{	"RightArm": [-140, 87, 0]	},
+				{	"RightArm": [-135, 87, 0]	}
+			]
+		}
+	},
+	"jojo": {
+		"pose_1": {
+			"type": "static_pose",
+			"pose": "{RightArm: [94.35989f, 61.0474f, 0.0f], Head: [25.31042f, 28.80394f, 0.0f], LeftArm: [-170.16779f, 67.58022f, 0.0f], RightLeg: [15.59482f, 62.04527f, 0.0f], Body: [-8.51975f, 26.26123f, 0.0f]}"
+		},
+		"pose_2": {
+			"type": "static_pose",
+			"pose": "{RightArm: [-57.99492f, -61.88699f, 0.0f], LeftLeg: [17.27854f, 68.7985f, 0.0f], Head: [3.64409f, -2.11267f, 0.0f], LeftArm: [-62.15227f, 61.35536f, 0.0f], RightLeg: [15.12864f, -88.81156f, 0.0f]}"
+		},
+		"pose_3": {
+			"type": "static_pose",
+			"pose": "{RightArm: [-50.34333f, -58.52263f, 0.0f], LeftLeg: [17.27854f, 68.7985f, 0.0f], Head: [3.64409f, -2.11267f, 0.0f], LeftArm: [-129.38306f, 57.10345f, 0.0f], RightLeg: [15.12864f, -88.81156f, 0.0f]}"
+		},
+		"pose_4": {
+			"type": "static_pose",
+			"pose": "{RightArm: [-93.30753f, 49.18908f, 0.0f], LeftLeg: [0.0f, 0.0f, -5.0f], Head: [4.08942f, 51.18388f, 0.0f], LeftArm: [0.21605f, 33.01645f, 0.0f], RightLeg: [0.0f, 10.0f, 5.0f]}",
+			"rotation_offset": -45
+		}
+	}
+}

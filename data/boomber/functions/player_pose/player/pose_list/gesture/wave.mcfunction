@@ -1,0 +1,1 @@
+tellraw @s [{"text": "Now playing [gesture/wave]...", "color": "green"}]

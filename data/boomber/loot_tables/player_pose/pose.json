@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:item",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:paper",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{ucit: {player_pose: {armor_items: [], previous_items: []}, id: \"pose.data_holder\", from: \"boomber:player_pose\"}}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
