@@ -55,7 +55,7 @@ async function do_stuff() {
 				}
 
 				promises.push(writeFile(pose_content, [type, category_name, data.file_name]));
-				promises.push(writeFile(`tellraw @s [{"text": "Now posing [${category_name}/${pose_name}]...", "color": "green"}]`, ['player/pose_list', category_name, data.file_name]));
+				promises.push(writeFile(`title @s actionbar [{"text": "Now playing [${category_name}/${pose_name}]...", "color": "green"}]`, ['player/pose_list', category_name, data.file_name]));
 			}
 			else if (type === 'animate_pose') {
 				const file_name = `${pose_name}.mcfunction`;
@@ -75,8 +75,37 @@ async function do_stuff() {
 				pose_list.push(`scoreboard players add @s bb.pp.tick 1`);
 				pose_list.push(`scoreboard players set @s[scores={bb.pp.tick=${Math.floor(frame)}..}] bb.pp.tick 0`);
 
+				if (Math.round(rotation_offset * 1000) !== 0) {
+					pose_list.push(`scoreboard players set @s bb.pp.rot_offset ${Math.round(rotation_offset * 1000)}`);
+				}
+
 				promises.push(writeFile(pose_list, [type, category_name, file_name]));
-				promises.push(writeFile(`tellraw @s [{"text": "Now playing [${category_name}/${pose_name}]...", "color": "green"}]`, ['player/pose_list', category_name, file_name]));
+				promises.push(writeFile(`title @s actionbar [{"text": "Now playing [${category_name}/${pose_name}]...", "color": "green"}]`, ['player/pose_list', category_name, file_name]));
+			}
+			else if (type === 'animate_once_pose') {
+				const file_name = `${pose_name}.mcfunction`;
+				logs.push({ type, name: pose_name, category: category_name });
+
+				const size = pose.length;
+				const step = frame / size ? frame / size: 1;
+				const iteration = Math.ceil(frame / step);
+				let pose_list = [];
+
+				for (let i = 0; i < iteration; i++) {
+					const data = compile_pose(pose[i], '');
+					
+					pose_list.push(`execute if score @s bb.pp.tick matches ${Math.floor(i * step)} run data merge entity @s {Pose: ${data.pose} }`);
+				}
+
+				pose_list.push(`scoreboard players add @s bb.pp.tick 1`);
+				pose_list.push(`execute if score @s bb.pp.tick matches ${Math.floor(frame)}.. run function boomber:player_pose/pose/main/end`);
+
+				if (Math.round(rotation_offset * 1000) !== 0) {
+					pose_list.push(`scoreboard players set @s bb.pp.rot_offset ${Math.round(rotation_offset * 1000)}`);
+				}
+
+				promises.push(writeFile(pose_list, [type, category_name, file_name]));
+				promises.push(writeFile(`title @s actionbar [{"text": "Now playing [${category_name}/${pose_name}]...", "color": "green"}]`, ['player/pose_list', category_name, file_name]));
 			}
 		}
 	}
@@ -87,8 +116,12 @@ async function do_stuff() {
 	const pose_main = logs.map(({ type, name, category }, index) => `execute if score @s pose matches ${index + 1} run function boomber:player_pose/${type}/${category}/${name}`);
 	promises.push(writeFile(pose_main, ['pose', 'main.mcfunction']));
 
-	const pose_list = logs.map(({ name, category }, index) => `tellraw @s [{"text": "${index + 1}", "color": "gold", "bold": true}, {"text": "> ", "color": "gray", "bold": false}, {"text": "${category}/${name}", "color": "green", "bold": false, "clickEvent": {"action": "run_command", "value": "/trigger pose set ${index + 1}"}, "hoverEvent": {"action": "show_text", "value": [{"text": "Click to pose"}]}}]`);
-	pose_list.push(`scoreboard players set @s pose -1`);
+	const pose_list = [
+		`tellraw @s [{"text": "Player Pose", "color": "green", "bold": true}, {"text": ":", "color": "gray"}]`,
+		`tellraw @s [{"text": "0", "color": "gold", "bold": true}, {"text": "> ", "color": "gray", "bold": false}, {"text": "clear", "color": "red", "bold": false, "clickEvent": {"action": "run_command", "value": "/trigger pose set 0"}, "hoverEvent": {"action": "show_text", "value": [{"text": "Click to clear pose"}]}}]`,
+		...logs.map(({ name, category }, index) => `tellraw @s [{"text": "${index + 1}", "color": "gold", "bold": true}, {"text": "> ", "color": "gray", "bold": false}, {"text": "${category}/${name}", "color": "green", "bold": false, "clickEvent": {"action": "run_command", "value": "/trigger pose set ${index + 1}"}, "hoverEvent": {"action": "show_text", "value": [{"text": "Click to pose ${category}/${name}"}]}}]`),
+		`scoreboard players set @s pose -1`
+	];
 	promises.push(writeFile(pose_list, ['player', 'pose_list', 'list.mcfunction']));
 
 	const static_pose_size = logs.filter(v => v.type === 'static_pose').length;

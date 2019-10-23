@@ -1,0 +1,1 @@
+title @s actionbar [{"text": "Now playing [jojo/pose_5]...", "color": "green"}]

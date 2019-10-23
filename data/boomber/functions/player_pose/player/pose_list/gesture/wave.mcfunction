@@ -1,1 +1,1 @@
-tellraw @s [{"text": "Now playing [gesture/wave]...", "color": "green"}]
+title @s actionbar [{"text": "Now playing [gesture/wave]...", "color": "green"}]

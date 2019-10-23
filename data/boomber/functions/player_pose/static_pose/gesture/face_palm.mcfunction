@@ -1,0 +1,1 @@
+data merge entity @s {Pose: {RightArm: [-127.36305f, -18.38129f, 0.0f], LeftLeg: [-4.55991f, -82.11199f, 0.0f], Head: [8.90821f, 27.3762f, 0.0f], RightLeg: [5.62195f, -87.11928f, 0.0f]}}

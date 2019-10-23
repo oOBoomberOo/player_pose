@@ -1,0 +1,12 @@
+execute if score @s bb.pp.tick matches 0 run data merge entity @s {Pose: {RightArm: [-85f, 4.18329f, 0.0f], LeftLeg: [-2.8333f, -0.22759f, 0.0f], Head: [0.0f, 0.0f, 30.0f], LeftArm: [-95f, -2.98113f, 0.0f], RightLeg: [16.277f, -1.9686f, 0.0f]} }
+execute if score @s bb.pp.tick matches 2 run data merge entity @s {Pose: {RightArm: [-87f, 4.18329f, 0.0f], LeftLeg: [-2.8333f, -0.22759f, 0.0f], Head: [0.0f, 0.0f, 28.0f], LeftArm: [-93f, -2.98113f, 0.0f], RightLeg: [16.277f, -1.9686f, 0.0f]} }
+execute if score @s bb.pp.tick matches 4 run data merge entity @s {Pose: {RightArm: [-89f, 4.18329f, 0.0f], LeftLeg: [-2.8333f, -0.22759f, 0.0f], Head: [0.0f, 0.0f, 26.0f], LeftArm: [-91f, -2.98113f, 0.0f], RightLeg: [16.277f, -1.9686f, 0.0f]} }
+execute if score @s bb.pp.tick matches 6 run data merge entity @s {Pose: {RightArm: [-91f, 4.18329f, 0.0f], LeftLeg: [-2.8333f, -0.22759f, 0.0f], Head: [0.0f, 0.0f, 24.0f], LeftArm: [-89f, -2.98113f, 0.0f], RightLeg: [16.277f, -1.9686f, 0.0f]} }
+execute if score @s bb.pp.tick matches 8 run data merge entity @s {Pose: {RightArm: [-93f, 4.18329f, 0.0f], LeftLeg: [-2.8333f, -0.22759f, 0.0f], Head: [0.0f, 0.0f, 22.0f], LeftArm: [-87f, -2.98113f, 0.0f], RightLeg: [16.277f, -1.9686f, 0.0f]} }
+execute if score @s bb.pp.tick matches 10 run data merge entity @s {Pose: {RightArm: [-95f, 4.18329f, 0.0f], LeftLeg: [-2.8333f, -0.22759f, 0.0f], Head: [0.0f, 0.0f, 20.0f], LeftArm: [-85f, -2.98113f, 0.0f], RightLeg: [16.277f, -1.9686f, 0.0f]} }
+execute if score @s bb.pp.tick matches 12 run data merge entity @s {Pose: {RightArm: [-93f, 4.18329f, 0.0f], LeftLeg: [-2.8333f, -0.22759f, 0.0f], Head: [0.0f, 0.0f, 22.0f], LeftArm: [-87f, -2.98113f, 0.0f], RightLeg: [16.277f, -1.9686f, 0.0f]} }
+execute if score @s bb.pp.tick matches 14 run data merge entity @s {Pose: {RightArm: [-91f, 4.18329f, 0.0f], LeftLeg: [-2.8333f, -0.22759f, 0.0f], Head: [0.0f, 0.0f, 24.0f], LeftArm: [-89f, -2.98113f, 0.0f], RightLeg: [16.277f, -1.9686f, 0.0f]} }
+execute if score @s bb.pp.tick matches 16 run data merge entity @s {Pose: {RightArm: [-89f, 4.18329f, 0.0f], LeftLeg: [-2.8333f, -0.22759f, 0.0f], Head: [0.0f, 0.0f, 26.0f], LeftArm: [-91f, -2.98113f, 0.0f], RightLeg: [16.277f, -1.9686f, 0.0f]} }
+execute if score @s bb.pp.tick matches 18 run data merge entity @s {Pose: {RightArm: [-87f, 4.18329f, 0.0f], LeftLeg: [-2.8333f, -0.22759f, 0.0f], Head: [0.0f, 0.0f, 28.0f], LeftArm: [-93f, -2.98113f, 0.0f], RightLeg: [16.277f, -1.9686f, 0.0f]} }
+scoreboard players add @s bb.pp.tick 1
+scoreboard players set @s[scores={bb.pp.tick=20..}] bb.pp.tick 0

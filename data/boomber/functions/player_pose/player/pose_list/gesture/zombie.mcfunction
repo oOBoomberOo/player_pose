@@ -1,0 +1,1 @@
+title @s actionbar [{"text": "Now playing [gesture/zombie]...", "color": "green"}]

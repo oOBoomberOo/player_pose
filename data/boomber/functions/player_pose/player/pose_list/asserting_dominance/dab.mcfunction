@@ -1,1 +1,1 @@
-tellraw @s [{"text": "Now posing [asserting_dominance/dab]...", "color": "green"}]
+title @s actionbar [{"text": "Now playing [asserting_dominance/dab]...", "color": "green"}]
